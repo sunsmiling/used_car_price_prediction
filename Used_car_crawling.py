@@ -1,18 +1,8 @@
-
-# coding: utf-8
-
-# In[3]:
-
-
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from pandas import Series, DataFrame
 import pandas as pd
 import sys
-
-
-# In[4]:
-
 
 def progress(count, total, suffix=''):
     bar_len = 60
@@ -25,24 +15,16 @@ def progress(count, total, suffix=''):
     sys.stdout.flush()  # As suggested by Rom Ruben
 
 
-# In[5]:
-
-
 def get_soup(url):
     html_doc = urlopen(url).read()
     soup = BeautifulSoup(html_doc, 'html.parser')
     return soup
 
 
-# In[1]:
-
-
 x = {'a': if }
 x = {key: value for key, value in x.items() if value != 20}
 x
 
-
-# In[8]:
 
 
 #승용차
@@ -130,9 +112,6 @@ def my_car(pagenum):
     return DataFrame(info)
 
 
-# In[9]:
-
-
 def concatthing(totpage):
     appended_data = []
     for k in range(totpage):
@@ -150,25 +129,7 @@ def concatthing(totpage):
         
 
 
-# In[10]:
-
-
 used_car=concatthing(14)
-
-
-# In[15]:
-
-
-used_car
-
-
-# In[14]:
-
-
-len(used_car)
-
-
-# In[12]:
 
 
 used_car.to_csv('used_car_sago.csv',index=False)
